@@ -1,6 +1,6 @@
 # Manol Server
 
-## Prerequest
+## Prerequisite
 * Python 2.7
 * Ubuntu 16.04
 
