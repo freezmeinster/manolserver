@@ -6,9 +6,7 @@ from deploy.models import DeployLog, DeployPlan
 
 def deploy(modeladmin, request, queryset):
     for plan in queryset:
-        DeployLog.objects.create(
-            plan = plan
-        )
+        plan.deploy()
 
 class DeployPlanAdmin(admin.ModelAdmin):
     list_display = ['name', 'code', 'auth_key', 'is_active']

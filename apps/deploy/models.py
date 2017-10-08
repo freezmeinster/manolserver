@@ -15,6 +15,11 @@ class DeployPlan(models.Model):
     def __unicode__(self):
         return self.name
     
+    def deploy(self):
+        DeployLog.objects.create(
+            plan = self
+        )
+    
 class DeployLog(models.Model):
     plan = models.ForeignKey('deploy.DeployPlan')
     deploy_date = models.DateTimeField(auto_now_add=True)
